@@ -8,7 +8,7 @@ object Patterns {
    * corresponding to those bindings.
    */
   case class Closure[+T](closedOverVariableNames: Seq[String], func: Seq[Any] ⇒ T)
-  //case class PatternMatch[T, U](pattern: Pattern[T], guard: Lambda[Boolean], rhs: Lambda[U])
+  case class PatternMatchCase[T, U](pattern: Pattern[T], rhs: Closure[U])
 
   /** A pattern that can match a value of type T and extract bindings in the process. Corresponds to the lhs of a "case" statement. */
   sealed trait Pattern[-T]

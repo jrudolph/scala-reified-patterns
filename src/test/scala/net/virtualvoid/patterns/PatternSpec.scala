@@ -63,7 +63,7 @@ class PatternSpec extends Specification {
       "guard" in {
         val PersonNameStartsWithOtto =
           Guard( // equivalent to `case Person(name) if name startsWith "Otto"
-            Closure(Seq("name"), name => name(0).asInstanceOf[String].startsWith("Otto")),
+            Closure(Seq("name"), args => args(0).asInstanceOf[String].startsWith("Otto")),
             Unapply1(Person.unapply, Bind("name", AnyValue))
           )
 
