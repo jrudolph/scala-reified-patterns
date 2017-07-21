@@ -3,3 +3,5 @@ libraryDependencies ++= Seq(
 )
 
 scalaVersion := "2.12.2"
+
+scalacOptions ++= Seq("-deprecation", "-feature", "-encoding", "utf8")
